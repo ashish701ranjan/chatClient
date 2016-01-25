@@ -150,8 +150,11 @@
 <template name="chatMessages">
 	<!--{{stringify chatMessages}}-->
 	{{#each chatMessages}}
-		<b>{{email}}</b>
-		<br>
-		<p>{{message}}</p>
+		{{#if currentUser email}}
+			<b class="yourMessage">{{message}}</b>
+			<br>
+			{{else}}
+			<b class="friendMessage">{{message}}</b>
+		{{/if}}
 	{{/each}}
 </template>
