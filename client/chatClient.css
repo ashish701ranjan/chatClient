@@ -119,6 +119,7 @@ input[type=button]
 	bottom:0;
 }
 #chatWindow {
+	display:none;
 	border:solid;
 	max-height: 600%;
 	overflow-y:auto; 
