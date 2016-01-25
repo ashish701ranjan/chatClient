@@ -1,8 +1,6 @@
 // Users = new Mongo.Collection("userAccounts");
 Router.route("/chatPage");
 if (Meteor.isClient) {
-  // counter starts at 0
-	Session.setDefault("counter", 0);
   //var localFriends=Friends;
 	Meteor.startup(function() {
             /*$( "#signUpButton" ).click(function(event, temp) {
@@ -56,9 +54,9 @@ if (Meteor.isClient) {
 	});
 	Template.friendNames.helpers({
 		friendNames: function() {
-			if (Friends.find({
+			if (typeof Friends.find({
 				email: Session.get("userMail")
-			}).fetch()[0] === undefined) {
+			}).fetch()[0] === "undefined") {
 				var array = [];
 				var temp = {};//new Object();
 				temp.email = "No friends yet";
@@ -164,7 +162,7 @@ if (Meteor.isClient) {
 			var userMail = Session.get("userMail");
 			//var length=Friends.find({friendMail:{$exists:true}}).fetch().length;
 			friendList = Friends.findOne({"email": userMail});
-			if (friendList === undefined) {
+			if (typeof friendList === "undefined") {
 				var array = [];
 				var friendObject = {};
 				//console.log(userMail);
