@@ -90,6 +90,7 @@ if (Meteor.isClient) {
 		},
 		"click span.emailId": function(event, temp) {
 			var chatFriend = $(event.target).text();
+			$("#chatWindow").css("display", "block");
 			$("#chatWindow").addClass("chatClass");
 			//console.log($(event.target).text());
 			//alert(chatFriend);
