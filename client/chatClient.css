@@ -1,0 +1,142 @@
+/* CSS declarations go here */
+body {
+	background-color: #f7f7f7;
+}
+nav {
+  background-color: #ee6e73;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+.nav-wrapper {
+	background-color: #3b5998;
+	position:relative;
+	height:100%;
+}
+textarea:focus, input:focus {
+    color: #000;
+}
+
+input, select, textarea{
+    color: #000;
+}
+input[type=button]
+{
+  background-color: #3b5998; 
+  margin:auto 20px;
+
+	/*give the button a drop shadow*/
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+	box-shadow: 0 0 4px rgba(0,0,0, .75);
+
+}
+#logo{
+	position: relative;
+	margin-left: 30%;
+}
+#leftDiv,#rightDiv{
+
+}
+#advertiseText{
+	position:relative;
+	margin:5% 6.5%;
+	font-size: 150%;
+}
+#createAccount{
+	position:relative;
+	margin:4% 6%;
+	font-size: 200%;
+}
+#createAccount p{
+	position: relative;
+	margin-top: -1%;
+	font-size: 50%;
+}
+.yourName{
+	position: relative;
+	margin-left: 20%;
+	width:50%;
+
+}
+#surname{
+	position:relative;
+	margin-left: 15%;
+}
+.yourName input[type=text]{
+	border-radius: 3px;
+}
+#signUpButton{
+	background-color: #336633;
+	color: #fff;
+}
+#friends{
+	max-height: 500px;
+	overflow-y:scroll;
+}
+#vr {
+    width:1px;
+    background-color:#C0C0C0;
+    position:relative;
+    top:0;
+    bottom:0;
+    height: 90vh;
+    
+}
+.search{
+	margin-top: 2%;
+}
+#friendDialogue{
+	position: fixed;
+	top:100;
+	bottom:100;
+	max-width: 500px;
+	max-height: 500px;
+	display: none;
+	z-index: 1000;
+	margin: 10% 35%;
+	background-color: #f7f7f7;
+	border:solid;
+	box-shadow: 10px 10px 5px #888888;
+}
+#closeDialogue{
+	float:right;
+	height:5%;
+	width: 5%;
+	z-index: 1500;
+}
+.chatClass{
+	background-image: url("chatBackground2.jpg");
+    width:100%;
+    height:100%;
+}
+#fullChatWindow{
+	position: relative;
+	height:80vh;
+}
+.messageInput {
+	position:absolute;
+	bottom:0;
+}
+#chatWindow {
+	border:solid;
+	max-height: 600px;
+	overflow-y:auto; 
+}
+#sendMessage{
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+#messageBar{
+	display:none;
+}
+.showClass{
+	display:block;
+}
+.hideClass{
+	display:none;
+}
+#chatFriend{
+	color:yellow;
+}

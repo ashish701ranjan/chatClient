@@ -1,0 +1,158 @@
+		
+<template name="demo">
+<nav>
+	<div class="nav-wrapper">
+			<a href="/" class="brand-logo"><b id="logo">Chat On</b>
+			</a>
+			<form id="loginForm">
+			<ul class="right">
+				<li>
+					<b>Email:</b>
+					<input type="text" name="email" id="loginEmail">
+				</li>
+				<li>
+					<b>Password:</b>
+					<input type="text" name="password" id="loginPassword">
+				</li>
+				<li>
+					<input type="button" value="Login" id="loginButton">
+				</li>
+
+			</ul>
+			</form>
+	</div>
+</nav>
+<div class="row">
+	<div class="col s6" id="leftDiv">
+		<div id="advertiseText">
+			<b>Chat-On helps you connect and share with the people in your life.
+			</b>
+			<br>
+			<img src="chatOn.png" alt="Connect people">
+		</div>
+	</div>
+	<div class="col s6" id="leftDiv">
+		<div id="createAccount">
+			<b>
+				Create an account
+			</b>
+			<p>
+				Its free and always will be.
+			</p>
+			<form id="signUpForm">
+			<div class="row">
+				<div class="col s3 yourName">
+					<input type="text" placeholder="First name" size="10" id="fname" required>
+				</div>
+				<div class="col s3 yourName" id="surname">
+					<input type="text" placeholder="surname" size="10" id="sname">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<input type="email" name="email" id="signUpEmail" placeholder="enter your email" size="23" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<input type="password" name="pass" class="signUpPassword" id="spass" placeholder="New password" size="23" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<input type="password" name="cPass" class="signUpPassword" id="cspass" placeholder="Confirn password" size="23" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s5.5">
+					<input type="date" name="bday" required>
+				</div>
+				<div class="col s0.5">
+					<p>
+						Birthday
+					</p>
+				</div>
+			</div>
+			<input type="radio" name="gender" id="male">
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="female">
+			<label for="female">Female</label>
+			<br>
+			<input type="button" value="create an account" id="signUpButton">
+
+			</form>
+			</div>
+		</div>
+	</div>
+</template>
+<template name="hey">
+<nav>
+	<div class="nav-wrapper">
+			<a href="/" class="brand-logo"><b id="logo">Chat On</b>
+			</a>
+			<ul class="right">
+				<b>
+					<li id="chatFriend"></li>
+				</b>
+				<li>&nbsp;&nbsp;</li>
+				<li>
+					<b id="loggedInUser">{{userName}}
+					</b>
+				</li>
+				<li>
+					<input type="button" value="SignOut" id="signOutButton">
+				</li>
+
+			</ul>
+	</div>
+</nav>
+<div class="row" id="fullChatWindow">
+	<div class="col s4">
+		<input type="email" placeholder="search a friend by email" class="search" id="searchText">
+		<input type="button" value="search" size="3" class="search" id="searchButton">
+		<br>
+		<b>Friends</b>
+		<hr>
+		<div id="friends">
+
+			{{> friendNames}}
+			
+		</div>
+	</div>
+	<div id="vr" class="col s1">&nbsp;
+	</div>
+	<div class="col s7" id="chatWindow">
+		{{> chatMessages}}
+		<div id="messageBar">
+			<input type='text' size=75 class='messageInput' placeholder='type your message here'>
+			<input type='button' value='Send' id='sendMessage'>
+		</div>
+	</div>
+	<div class="col s7" id="friendDialogue">
+		<!--<img src="./close.png" alt="close" id="closeDialogue">-->
+	</div>
+</div>
+
+</template>
+<template name="friendNames">
+	{{#each friendNames}}
+    <!--<b>{{email}}:</b><br>-->
+	    <div class="row">
+	        <div class="col">
+	          <div class="card blue-grey darken-1">
+	            <div class="card-content white-text">
+	              <a href="#"><span class="card-title emailId">{{email}}</span></a>
+	            </div>
+	          </div>
+	        </div>
+	    </div>
+	{{/each}}
+</template>
+<template name="chatMessages">
+	<!--{{stringify chatMessages}}-->
+	{{#each chatMessages}}
+		<b>{{email}}</b>
+		<br>
+		<p>{{message}}</p>
+	{{/each}}
+</template>
