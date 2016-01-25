@@ -3,6 +3,7 @@ Router.route("/chatPage");
 if (Meteor.isClient) {
   //var localFriends=Friends;
 	Meteor.startup(function() {
+
             /*$( "#signUpButton" ).click(function(event, temp) {
 
             	// event. e.stopPropogation();
@@ -81,6 +82,11 @@ if (Meteor.isClient) {
 		//LoggedInUser.remove({});
 			Session.set("userMail", null);
 			Router.go("/");
+		},
+		"keyup .messageInput": function(e) {
+			if (e.which === 13) {
+				$("#sendMessage").click();
+			}
 		},
 		"click span.emailId": function(event, temp) {
 			var chatFriend = $(event.target).text();
